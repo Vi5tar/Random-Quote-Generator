@@ -34,7 +34,7 @@ var authArray = ["Frances",
                  "Cat",
                  "Rimmer",
                  "Debbie",
-                 "Raven",
+                 "The Raven",
                  "Sloth"];
 var randomNumber = "";
 var randomQuote = "";
