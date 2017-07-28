@@ -1,46 +1,32 @@
-var quoteArray = ["Wait!! My nose and my butt itches.",
-                  "In your own time.",
-                  "I don't give 2 shits or a fuck!",
-                  "Basil Spice!",
-                  "Well... You're a goose neck!",
-                  "You're gonna need to have a better plan than that.",
-                  "He got me!!",
-                  "*Whimper*",
-                  "She purrs like a chain smoking kitten.",
-                  "What smell? I don't smell any smells!",
-                  "Two Babies!!",
-                  "Who's that guy?!",
-                  "I don't even have a husband yet!!!",
-                  "If it was up your butt you'd know!",
-                  "Feckles, heckles, hackles, schmeckles. Whatever the hell they are, they're up right now and pointed at you, buddy!",
-                  "I hardly said anything apart from 'Geronimo'.",
-                  "Well's a deep subject.",
-                  "Nevermore",
-                  "Hey, you guuuys!"];
-var authArray = ["Frances",
-                 "Rimmer",
-                 "Emily",
-                 "Emily",
-                 "Mary",
-                 "Greg",
-                 "Phinehas",
-                 "Bubba",
-                 "Josh",
-                 "Lister",
-                 "Harper",
-                 "Cat",
-                 "Harper",
-                 "Debbie",
-                 "Cat",
-                 "Rimmer",
-                 "Debbie",
-                 "The Raven",
-                 "Sloth"];
+var quoteArray = [["Wait!! My nose and my butt itches.", "Frances"],
+                   ["In your own time.", "Rimmer"],
+                   ["I don't give 2 shits or a fuck!", "Emily"],
+                   ["Basil Spice!", "Emily"],
+                   ["Well... You're a goose neck!", "Mary"],
+                   ["You're gonna need to have a better plan than that.", "Greg"],
+                   ["He got me!!", "Phinehas"],
+                   ["*Whimper*", "Bubba"],
+                   ["She purrs like a chain smoking kitten.", "Josh"],
+                   ["What smell? I don't smell any smells!", "Lister"],
+                   ["Two Babies!!", "Harper"],
+                   ["Who's that guy?!", "Cat"],
+                   ["I don't even have a husband yet!!!", "Harper"],
+                   ["If it was up your butt you'd know!", "Debbie"],
+                   ["Feckles, heckles, hackles, schmeckles. Whatever the hell they are, they're up right now and pointed at you, buddy!", "Cat"],
+                   ["I hardly said anything apart from 'Geronimo'.", "Rimmer"],
+                   ["Well's a deep subject.", "Debbie"],
+                   ["Nevermore", "The Raven"],
+                   ["Hey, you guuuys!", "Sloth"]];
 var randomNumber = "";
 var randomQuote = "";
 var matchingAuth = "";
 
-function randomRange() {
+$(document).ready(function() {
+  newQuote();
+});
+
+//randomly picks a quote
+function randomize() {
   var tmp = Math.floor(Math.random() * quoteArray.length);
   if (tmp == randomNumber) {
     tmp = Math.floor(Math.random() * quoteArray.length);
@@ -49,16 +35,18 @@ function randomRange() {
     }
   }
   randomNumber = tmp;
-  randomQuote = quoteArray[randomNumber];
-  matchingAuth = authArray[randomNumber];
-  return randomNumber;
+  randomQuote = quoteArray[randomNumber][0];
+  matchingAuth = quoteArray[randomNumber][1];
 }
 
+//populates the quote and the author ino the page
 function newQuote() {
-    document.getElementById("quote").innerHTML = quoteArray[randomRange()];
-    document.getElementById("auth").innerHTML = matchingAuth;
+  randomize();
+  document.getElementById("quote").innerHTML = randomQuote;
+  document.getElementById("auth").innerHTML = matchingAuth;
 }
 
+//opens a new window to tweet the current quote
 function tweetQuote() {
   window.open("https://twitter.com/intent/tweet?text=" + randomQuote + " -" + matchingAuth, "", "width=600,height=300");
 }
