@@ -1,7 +1,7 @@
 var quoteArray = [
   ["Wait!! My nose and my butt itches.", "Frances"],
   ["In your own time.", "Rimmer"],
-  ["I don't give 2 shits or a fuck!", "Emily"],
+  //["I don't give 2 shits or a fuck!", "Emily"],
   ["Basil Spice!", "Emily"],
   ["Well... You're a goose neck!", "Mary"],
   ["You're gonna need to have a better plan than that.", "Greg"],
@@ -12,7 +12,7 @@ var quoteArray = [
   ["Two Babies!!", "Harper"],
   ["Who's that guy?!", "Cat"],
   ["I don't even have a husband yet!!!", "Harper"],
-  ["If it was up your butt you'd know!", "Debbie"],
+  //["If it was up your butt you'd know!", "Debbie"],
   [
     "Feckles, heckles, hackles, schmeckles. Whatever the hell they are, they're up right now and pointed at you, buddy!",
     "Cat"
